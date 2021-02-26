@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Drop-Down Lists</title>
+    <style>
+        html{
+            box-sizing: border-box;
+            font-size: 20px;
+            line-height: 1.6;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #878787;
+        }
+        *, *::before, *::after{
+            box-sizing: inherit;
+            padding: 0;
+            margin: 0;
+        }
+        main{
+            margin: 1rem auto;
+            max-width: 1000px;
+            background-color: tomato;
+        }
+        h2{
+            padding: 1rem;
+        }
+        select, option, datalist, input, label, button {
+            font-size: 1.5rem;
+            color:inherit;
+        }
+        select{
+            background-color: transparent;
+        }
+
+        .form-box select{
+            flex-basis: 80%
+        }
+
+        p.form-box{
+            padding: 0.5rem 1rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .form-box option:default {
+            color: red;
+        }
+        .form-box label {
+            flex-basis: 205;
+            padding: 0 1rem;
+        }
+        .form-box button{
+            flex-basis: auto;
+            padding: 0 1rem;
+            margin-left: 20%;
+            border-radius: 20px;
+        }
+        datalist{
+            font-size: 2rem;
+        }
+        datalist option{
+            font-size: 2rem;
+        }
+        option{
+            font-size: 2rem;
+        }
+
+        /* https://www.youtube.com/watch?v=vY4Cn3wvsVc&list=PLyuRouwmQCjncCz8JChyPNRBvm2ONGYa2&index=22                 6.15sn */
+    </style>
+</head>
+<body>
+    <main>
+        <h2>HTML  Drop-Down Lists</h2>
+        <form name="my-form" action="#">
+            <p class="form-box">
+                <label for="region" title="State or Territory">Region</label>
+                <!-- if you give the same name select id and Label for when you click on the label on the webpage it will activate drop-down list  -->
+                <select name="region" id="region" >
+                    <optgroup label="States">
+                        <option value="new-south-wales">New South Wales</option>
+                        <option value="queensland">Queensland</option>
+                        <option value="south-australia">South Australia</option>
+                        <option value="tasmania">Tasmania</option>
+                        <option value="victoria">Victoria</option>
+                        <option value="western-australia">Western Australia</option>
+                        <option selected value="adana">Adana 01</option>
+                    </optgroup>
+                    <optgroup label="Territories">
+                        <option value="alberta">Alberta</option>
+                        <option value="british-columbia">British Columbia</option>
+                        <option value="manitoba">Manitoba</option>
+                        <option value="new-brunswick">New Brunswick</option>
+                        <option value="newfoundland-and-labrador">Newfoundland and Labrador</option>
+                        <option value="northwest-territories">Northwest Territories</option>
+                        <option value="nova-scotia">Nova Scotia</option>
+                        <option value="nunavut">Nunavut</option>
+                        <option value="ontario">Ontario</option>
+                        <option value="prince-edward-island">Prince Edward Island</option>
+                        <option value="quebec">Quebec</option>
+                        <option value="saskatchewan">Saskatchewan</option>
+                        <option value="yukon">Yukon</option>
+                    </optgroup>
+                </select></p>
+            <p class="form-box">
+                <label for="city">City</label>
+                <input name="city" id="city" list="cities"></p>
+            <p class="form-box">
+                <button id="btnSend">Click Me</button></p>
+        </form>
+
+        <!-- datalist id and input List elements have the same keyword for connecting each other. 
+             This way you can use multiple time data list in your webpage -->
+        <datalist id="cities">
+            <option value="Alberta">Albertaa</option>
+            <option value="British-columbia">British Columbia</option>
+            <option value="Manitoba">Manitobaa</option>
+            <option value="New-brunswick">New Brunswick</option>
+            <option value="Newfoundland-and-labrador">
+            <option value="Northwest-territories">
+            <option value="Nova-scotia">
+        </datalist>
+
+        </p>
+    </main>
+</body>
+</html>
